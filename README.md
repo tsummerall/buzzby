@@ -23,6 +23,8 @@ Elliptical options include: arcStart in radians, arcLength in radians, arcDirect
 
 Line options include origin ("tl","tr","bl","br") which determines which corner to start the line in. The line of items will stretch to the opposite corner of the container.
 
-The fit option for both determines if all elements should stay within bounds of container (otherwise the top left css alignment will cause the bottom right items to be outside)
+The fit boolean option for both determines if all elements should stay within bounds of container (otherwise the top left css alignment will cause the bottom right items to be outside)
+
+The animate boolean option determines whether or not to animate. The duration option specifies milliseconds for the animation.
 
 The child elements should be absolutely positioned and the container should be relatively positioned.
