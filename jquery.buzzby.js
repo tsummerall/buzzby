@@ -100,15 +100,3 @@
     }
  };
 })(jQuery);
- 
-$('#posrect').buzzby({shape:"ellipse",arcLength:Math.PI/2,arcStart:Math.PI*1.5});
-$(window).resize(function(){
-  console.log('resize'); 
-  $('#posrect').buzzby({shape:"ellipse",arcLength:Math.PI/2,arcStart:Math.PI*1.5});
-});
-
-
-/*
-var myRect = {top:150,left:150,width:800,height:400};
-pts=ellipticalAlignPoints(myRect,"block",Math.PI*2, Math.PI*1.5, "cc");
-positionElementsWithPoints('block', pts); */
