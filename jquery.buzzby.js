@@ -17,7 +17,8 @@
       arcStart:Math.PI,
       arcLength:Math.PI*2,
       arcDirection:"cw",
-      animate:true
+      animate:true,
+      duration:2000
     };
    
     var options = $.extend(defaults, options); 
@@ -47,7 +48,7 @@
           var nextPoint = addPoints([{x:xPos,y:yPos},{x:radiusH, y:radiusV}]);
           if(options.animate) {
            $(this).stop();
-           $(this).animate({left: nextPoint.x, top: nextPoint.y}, 2000);
+           $(this).animate({left: nextPoint.x, top: nextPoint.y}, options.duration);
           } else {
             $(this).css('top',nextPoint.y+'px');
             $(this).css('left',nextPoint.x+'px');
@@ -81,7 +82,7 @@
         return this.children().each(function() {
           if(options.animate) {
             $(this).stop();
-            $(this).animate({left: xOrigin, top: yOrigin}, 2000);
+            $(this).animate({left: xOrigin, top: yOrigin}, options.duration);
           } else {
             $(this).css('top',yOrigin+'px');
             $(this).css('left',xOrigin+'px');
