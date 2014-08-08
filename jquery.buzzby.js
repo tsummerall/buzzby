@@ -31,6 +31,9 @@
     }
     switch(options.shape) {
       case "ellipse":
+        if(options.arcLength < Math.PI*2) {
+         numIntervals = numPoints;
+        }
         var radiusH = alignRect.width/2;
         var radiusV = alignRect.height/2;
         var arcInterval = defaults.arcLength / numPoints;
