@@ -7,10 +7,6 @@
  * @version 0.5
  */
 
-/* Next steps:
-  - Decide what to do about different sized objects. Adjust or ignore?
-  - do we need to subtract one from numpoints for ellipse too?
-*/
 
 (function($){
  $.fn.buzzby = function(options) {
