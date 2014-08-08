@@ -1,7 +1,7 @@
 buzzby
 ======
 
-Basic element layout plugin for query. 
+Basic element layout plugin for query. Demo here http://codepen.io/tsum/pen/xhpei
 
 (I apologize for the skimpy docs. I just started this as a utility for a larger project and hope to come back to it. I uploaded it because there seem to be few elliptical alignment scripts around.)
 
