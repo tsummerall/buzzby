@@ -18,3 +18,11 @@ $('#controller').buzzby({shape:"ellipse",arcLength:Math.PI/2,arcStart:Math.PI*1.
 or
 
 $('#controller').buzzby({shape:"line"});
+
+Elliptical options include: arcStart in radians, arcLength in radians, arcDirection ("cw" or "ccw" for clockwise and counter clockwise)
+
+Line options include origin ("tl","tr","bl","br")
+
+The fit option for both determines if all elements should stay within bounds of container (other wise the top left css alignment will cause the bottom right items to be outside)
+
+The child elements should be absolutely positioned and the container should be relatively positioned.
