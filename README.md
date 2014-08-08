@@ -21,7 +21,7 @@ $('#controller').buzzby({shape:"line"});
 
 Elliptical options include: arcStart in radians, arcLength in radians, arcDirection ("cw" or "ccw" for clockwise and counter clockwise)
 
-Line options include origin ("tl","tr","bl","br")
+Line options include origin ("tl","tr","bl","br") which determines which corner to start the line in. The line of items will stretch to the opposite corner of the container.
 
 The fit option for both determines if all elements should stay within bounds of container (other wise the top left css alignment will cause the bottom right items to be outside)
 
