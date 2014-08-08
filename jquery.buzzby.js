@@ -1,3 +1,11 @@
+/*
+* jQuery.buzzby - Evenly space child elements in various shapes
+* Thomas Summerall
+* Released into the public domain
+* Date: 8 August 2014
+* @author Thomas Summerall
+* @version 0.5
+*/
 
 (function($){
  $.fn.buzzby = function(options) {
@@ -8,7 +16,8 @@
       origin:"tl",
       arcStart:Math.PI,
       arcLength:Math.PI*2,
-      arcDirection:"cw"
+      arcDirection:"cw",
+      animate:true
     };
    
     var options = $.extend(defaults, options); 
@@ -35,18 +44,20 @@
         return this.children().each(function() {
           var xPos = Math.sin(curArcPos) * radiusH;
           var yPos = Math.cos(curArcPos) * radiusV;
-          var nextPoint = addPoints([{x:xPos,y:yPos},{x:radiusH, y:radiusV}/*,{x:alignRect.left, y:alignRect.top}*/]);
-          //$(this).css('top',nextPoint.y+'px');
-          //$(this).css('left',nextPoint.x+'px');
-          $(this).stop();
-          $(this).animate({left: nextPoint.x, top: nextPoint.y}, 2000);
+          var nextPoint = addPoints([{x:xPos,y:yPos},{x:radiusH, y:radiusV}]);
+          if(options.animate) {
+           $(this).stop();
+           $(this).animate({left: nextPoint.x, top: nextPoint.y}, 2000);
+          } else {
+            $(this).css('top',nextPoint.y+'px');
+            $(this).css('left',nextPoint.x+'px');
+          }
           curArcPos += arcInterval;
         });
         break;
       case "line": // assume tl
         var xOff = (alignRect.width)/numIntervals;
         var yOff = (alignRect.height)/numIntervals;
-        console.log(xOff);
         var xOrigin=0;
         var yOrigin=0;
         switch(options.origin) {
@@ -68,10 +79,13 @@
             break;
         }
         return this.children().each(function() {
-          $(this).css('top',yOrigin+'px');
-          $(this).css('left',xOrigin+'px');
-          //$(this).stop();
-          //$(this).animate({left: xOrigin, top: yOrigin}, 2000);
+          if(options.animate) {
+            $(this).stop();
+            $(this).animate({left: xOrigin, top: yOrigin}, 2000);
+          } else {
+            $(this).css('top',yOrigin+'px');
+            $(this).css('left',xOrigin+'px');
+          }
           xOrigin+=xOff;
           yOrigin+=yOff;
         });
@@ -80,6 +94,7 @@
         break;
     }
    
+    // This is to ease more complex frames of reference in the future
     function addPoints(points) {
       var resultPoint = {x:0,y:0};
       for(var curPoint = 0; curPoint<points.length; curPoint++) {
