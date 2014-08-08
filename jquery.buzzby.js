@@ -38,7 +38,7 @@
           arcInterval *= -1;
         }
         var curArcPos = defaults.arcStart ? defaults.arcStart : 0; 
-        this.children().each(function() {
+        return this.children().each(function() {
           var xPos = Math.sin(curArcPos) * radiusH;
           var yPos = Math.cos(curArcPos) * radiusV;
           var nextPoint = addPoints([{x:xPos,y:yPos},{x:radiusH, y:radiusV}/*,{x:alignRect.left, y:alignRect.top}*/]);
@@ -73,7 +73,7 @@
           default:
             break;
         }
-        this.children().each(function() {
+        return this.children().each(function() {
           $(this).css('top',yOrigin+'px');
           $(this).css('left',xOrigin+'px');
           //$(this).stop();
