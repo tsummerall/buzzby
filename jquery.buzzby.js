@@ -1,12 +1,3 @@
-/*
- * jQuery.buzzby - Evenly space child elements in various shapes
- * Thomas Summerall
- * Released into the public domain
- * Date: 8 August 2014
- * @author Thomas Summerall
- * @version 0.5
- */
-
 
 (function($){
  $.fn.buzzby = function(options) {
@@ -31,12 +22,12 @@
     }
     switch(options.shape) {
       case "ellipse":
-        if(options.arcLength < Math.PI*2) {
+        if(options.arcLength >= Math.PI*2) {
          numIntervals = numPoints;
         }
         var radiusH = alignRect.width/2;
         var radiusV = alignRect.height/2;
-        var arcInterval = defaults.arcLength / numPoints;
+        var arcInterval = defaults.arcLength / numIntervals;
         if(options.arcDirection == "cw") {
           arcInterval *= -1;
         }
