@@ -7,7 +7,7 @@ Basic element layout plugin for query.
 
 Usage:
 
-Assuming a <div id="controller"> contains a bunch of immediate children that you want to align and distribute in a line or a on an ellipse:
+Assuming a div with id="controller" contains a bunch of immediate children that you want to align and distribute in a line or a on an ellipse:
 
 $('#controller').buzzby({shape:"ellipse"});
 
